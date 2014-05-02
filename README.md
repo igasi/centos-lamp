@@ -11,6 +11,8 @@ sshd
 drush
 git
 composer
+Devepment tools
+Xdebug
 
 ## to build
 
@@ -27,3 +29,10 @@ sudo docker run -i -v /home/user/project/drupal8/:/var/www/html:rw -t drupal8/ce
 
 http://172.17.0.2/
 http://172.17.0.2/phpinfo.php
+
+
+
+ToDo
+
+Config Xdedug (Currently only install)
+Add puppet

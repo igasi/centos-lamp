@@ -19,6 +19,9 @@ RUN rpm -Uvh http://powerstack.org/powerstack-release.rpm
 # install httpd
 RUN yum -y install httpd vim-enhanced bash-completion unzip
 
+#Install build essential or Development tools
+RUN yum groupinstall -y "Development Tools"
+
 # install mysql
 RUN yum install -y mysql mysql-server
 RUN echo "NETWORKING=yes" > /etc/sysconfig/network
@@ -39,6 +42,10 @@ RUN yum install -y git-core
 RUN cd /opt/
 RUN curl -sS https://getcomposer.org/installer | php
 RUN mv composer.phar /usr/local/bin/composer
+#install pear
+RUN wget http://pear.php.net/go-pear.phar && php go-pear.phar
+#install xdebug
+RUN pecl install xdebug
 
 #install drush
 #RUN yum install -y php-drush-drush
